@@ -2,7 +2,12 @@
     text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
 
- 
+.flashes h4{
+    line-height: 2;
+}
+
+
+
 .footer{
     height: 4.5rem;
     text-align: center;
