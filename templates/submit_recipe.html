@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="amber white-text center-align text-shadow">Submit Your Recipe!</h3>
+
+<div class="row">
+    <form class="col s12" method="POST">
+        <div class="row">
+            <div class="input-field col s2">
+                <input placeholder="Category" id="category" type="text" class="validate">
+                <label for="category"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Recipe Name" id="recipe_name" type="text" class="validate">
+                <label for="recipe_name"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Preparation Time" id="preparation_time" type="text" class="validate">
+                <label for="preparation_time"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Cooking Time in minutes" id="cooking_time" type="text" class="validate">
+                <label for="cooking_time"></label>
+            </div>
+        </div>
+        <div class="row">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <textarea id="textarea1" placeholder="Ingredients" class="materialize-textarea"></textarea>
+                        <label for="textarea1"></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" placeholder="Directions" class="materialize-textarea"></textarea>
+                        <label for="textarea1"></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </form>
+</div>
+{% endblock %}

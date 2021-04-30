@@ -26,7 +26,7 @@
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                     {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
-                    <li><a href="#">Submit Recipe</a></li>
+                    <li><a href="{{ url_for('submit_recipe') }}">Submit Recipe</a></li>
                     <li><a href="#">My Recipes</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
@@ -43,13 +43,13 @@
             </li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
-                <li><a href="#">Submit Recipe</a></li>
-                <li><a href="#">My Recipes</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
+            <li><a href="{{ url_for('submit_recipe') }}">Submit Recipe</a></li>
+            <li><a href="#">My Recipes</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
     </header>
@@ -72,19 +72,16 @@
         {% endblock %}
     </main>
 
-    <footer class="footer amber darken-1">
-        <div class="footer-links">
-            <a href="https://www.facebook.com" target="_blank"> <i class="fa fas-facebook-square"> </i> Facebook </a>
-
-            <a href="https://www.linkedin.com" target="_blank"><i class="fa fas-linkedin"></i> LinkedIn </a>
-
-            <a href="https://www.instagram.com" target="_blank"><i class="fa fas-instagram"></i> Instagram </a>
-
-            <a href="https://www.twitter.com" target="_blank"><i class="fa fas-twitter"></i> Twitter</a>
-
-            <a href="https://github.com/Dwain-Daniel" target="_blank"><i class="fa fas-github"></i> GitPod</a>
+    <footer class="page-footer amber white-text ">
+        <div class="center-align s12 white-text">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i> Facebook  </a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn   </a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram   </a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter  </a>
+            <a href="https://github.com/Dwain-Daniel" target="_blank"><i class="fab fa-github"></i>   GitPod</a>
         </div>
     </footer>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
