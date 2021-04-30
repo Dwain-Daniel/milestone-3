@@ -1,15 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-    <h4>duijsksclnskjcnsl</h4>
-    {% for recipe in recipes %}
-        {{ recipe.category }}<br>
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.serving_size }}<br>
-        {{ recipe.preparation_time }}<br>
-        {{ recipe.cooking_time }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.instructions }}<br>
-        {{ recipe.username }}<br>
-    {% endfor %}
+<h4>duijsksclnskjcnsl</h4>
+ 
 
- {% endblock %}
+<ul class="collapsible">
+    {% for recipe in recipes %}
+    <li>
+        <div class="collapsible-header white-text amber text-shadow">
+            <i class="fas fa-caret-down"></i>
+            <strong>{{ recipe.category }}</strong>  :  {{ recipe.recipe_name }}
+        </div>
+        <div class="collapsible-body">
+            Serving Time <i class="far fa-clock"></i> : {{ recipe.serving_size }} minutes<br>
+            Preparation Time <i class="fas fa-utensils"></i> : {{ recipe.preparation_time }} minutes<br>
+            Cooking Time <i class="fas fa-utensils"></i> : {{ recipe.cooking_time }} minutes<br>
+            Ingredients <i class="fas fa-list-ul"></i> : {{ recipe.ingredients }}<br>
+            Instructions <i class="fas fa-list-ol"></i> :{{ recipe.instructions }}<br>
+            Username <i class="fas fa-user"></i> : {{ recipe.username }}<br>
+        </div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
