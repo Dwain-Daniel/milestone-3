@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h4>duijsksclnskjcnsl</h4>
  
-
 <ul class="collapsible">
     {% for recipe in recipes %}
     <li>
@@ -18,14 +16,6 @@
             Instructions <i class="fas fa-list-ol"></i> :{{ recipe.instructions }}<br>
             Username <i class="fas fa-user"></i> : {{ recipe.username }}<br>
         </div>
-    </li>
-    <li>
-        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
     </li>
     {% endfor %}
 </ul>
