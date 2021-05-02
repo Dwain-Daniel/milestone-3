@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find().sort("category", 1))
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -46,6 +46,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
@@ -62,10 +63,12 @@ def login():
                     flash("Welcome, {}".format(request.form.get("username")))
                     return redirect(url_for(
                         "profile", username=session["user"]))
-
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
+        else:
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
 
     return render_template("login.html")
 
@@ -78,7 +81,7 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", username=username)
     
-    return render_template("profile.html", username=username)
+    return redirect(url_for("login"))
 
 
 @app.route("/logout")
@@ -88,8 +91,23 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/submit_recipe")
+@app.route("/submit_recipe", methods = ["GET", "POST"])
 def submit_recipe():
+    if request.method == "POST":
+        recipe = {
+            "category": request.form.get("category"),
+            "recipe_name": request.form.get("recipe_name"),
+            "serving_size": request.form.get("serving_size"),
+            "preparation_time": request.form.get("preparation_time"),
+            "cooking_time": request.form.get("cooking_time"),
+            "ingredients": request.form.getlist("ingredients"),
+            "instructions": request.form.get("instructions"),
+            "username": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Submitted!")
+        return  redirect(url_for("get_recipes"))
+
     categories = mongo.db.categories.find()
     return render_template("submit_recipe.html", categories=categories)
 
