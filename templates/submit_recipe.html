@@ -7,7 +7,7 @@
     <form class="col s12" method="POST" action="{{ url_for('submit_recipe') }}">
         <div class="row">
             <div class="input-field col s3">
-                <select name="category" id="category" class="validate">
+                <select name="category" id="category" class="validate" required>
                     <option value="" disabled selected>Choose recipe category!</option>
                     {% for category in categories %}
                     <option value="{{ category.category }}">{{ category.category }}</option>
@@ -21,6 +21,13 @@
                 <input placeholder="Recipe Name" id="recipe_name" name="recipe_name" type="text" minlength="5"
                     maxlength="50" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Description" id="desciption" minlength="5" maxlength="150"
+                    name="description" type="text" class="validate" required>
+                <label for="description">Description</label>
             </div>
         </div>
         <div class="row">

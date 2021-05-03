@@ -97,6 +97,7 @@ def submit_recipe():
         recipe = {
             "category": request.form.get("category"),
             "recipe_name": request.form.get("recipe_name"),
+            "description": request.form.get("description"),
             "serving_size": request.form.get("serving_size"),
             "preparation_time": request.form.get("preparation_time"),
             "cooking_time": request.form.get("cooking_time"),
