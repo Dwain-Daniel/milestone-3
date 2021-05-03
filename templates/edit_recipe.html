@@ -8,9 +8,13 @@
         <div class="row">
             <div class="input-field col s3">
                 <select name="category" id="category" class="validate" required>
-                    <option value="" disabled selected>Choose recipe category!</option>
+                    <option value="" disabled>Choose recipe category!</option>
                     {% for category in categories %}
-                    <option value="{{ category.category }}">{{ category.category }}</option>
+                        {% if category.category == recipe.category %}
+                        <option value="{{ category.category }}" selected>{{ category.category }}</option>
+                        {% else %}
+                        <option value="{{ category.category }}">{{ category.category }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="category">Category</label>
@@ -18,57 +22,58 @@
         </div>
         <div class="row">
             <div class="input-field col s3">
-                <input placeholder="Recipe Name" id="recipe_name" name="recipe_name" type="text" minlength="5"
+                <input placeholder="Recipe Name" value="{{ recipe.recipe_name }}" id="recipe_name" name="recipe_name" type="text" minlength="5"
                     maxlength="50" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s3">
-                <input placeholder="Description" id="desciption" minlength="5" maxlength="150"
-                    name="description" type="text" class="validate" required>
+                <input placeholder="Description" value="{{ recipe.description }}" id="desciption" minlength="5" maxlength="150" name="description"
+                    type="text" class="validate" required>
                 <label for="description">Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s3">
                 <input placeholder="Preparation Time" id="preparation_time" minlength="5" maxlength="50"
-                    name="preparation_time" type="text" class="validate" required>
+                    name="preparation_time" type="text" value="{{ recipe.preparation_time }}" class="validate" required>
                 <label for="preparation_time">Preparation Time (minutes)</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s3">
                 <input placeholder="Cooking Time in minutes" id="cooking_time" minlength="5" maxlength="50"
-                    name="cooking_time" type="text" class="validate" required>
+                    name="cooking_time" type="text" value="{{ recipe.cooking_time }}" class="validate" required>
                 <label for="cooking_time">Cooking Time (minutes)</label>
             </div>
         </div>
         <div class="row">
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                     <textarea id="textarea1" placeholder="Ingredients" name="ingredients"
-                        class="materialize-textarea validate" required></textarea>
-                    <label for="textarea1">Ingredients - Please list these one item per line</label>
+                        class="materialize-textarea validate" required>{{- recipe.ingredients -}}</textarea>
+                    <label for="textarea1">Ingredients - Please list these one step per line</label>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="row">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="textarea1" placeholder="Instructions" name="instructions"
-                            class="materialize-textarea validate" required></textarea>
-                        <label for="textarea1">Instructions - Please list these one step per line</label>
-                    </div>
+                <div class="input-field col s12">
+                    <textarea id="textarea1" placeholder="Instructions" name="instructions"
+                        class="materialize-textarea validate" required>{{- recipe.instructions -}}</textarea>
+                    <label for="textarea1">Instructions - Please list these one step per line</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button class="btn amber waves-effect waves-light text-shadow" type="submit">Save Changes
-                        <i class="fas fa-edit right"></i>
-                    </button>
-
-                </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_recipes') }}" class="btn red white-text text-shadow"> Cancel Changes <i class="fas fa-times-circle right"></i></a>
+                <button class="btn amber waves-effect waves-light text-shadow" type="submit">Save Changes
+                    <i class="fas fa-edit right"></i>
+                </button>
             </div>
+        </div>    
     </form>
 </div>
 </div>
