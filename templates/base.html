@@ -53,11 +53,11 @@
             {% endif %}
         </ul>
     </header>
-
+    <!--Top Parallax-->
     <div class="parallax-container">
-      <div class="parallax"><img id="hero" src="{{ url_for('static', filename='images/hero.jpg') }}"></div>
+        <div class="parallax"><img id="hero" src="{{ url_for('static', filename='images/hero.jpg') }}"></div>
     </div>
-    
+
     <section>
         <!--flash messages-->
         {% with messages  = get_flashed_messages() %}
@@ -76,13 +76,18 @@
         {% endblock %}
     </main>
 
+    <div class="parallax-container">
+        <div class="parallax"><img id="hero" src="{{ url_for('static', filename='images/hero.jpg') }}"></div>
+    </div>
+
+
     <footer class="page-footer amber white-text ">
         <div class="center-align s12 white-text">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i> Facebook  </a>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn   </a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram   </a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter  </a>
-            <a href="https://github.com/Dwain-Daniel" target="_blank"><i class="fab fa-github"></i>   GitPod</a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i> Facebook </a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn </a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram </a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter </a>
+            <a href="https://github.com/Dwain-Daniel" target="_blank"><i class="fab fa-github"></i> GitPod</a>
         </div>
     </footer>
 

@@ -36,31 +36,31 @@
         </div>
         <div class="row">
             <div class="input-field col s3">
-                <input placeholder="Preparation Time" id="preparation_time" minlength="5" maxlength="50"
+                <input placeholder="Preparation Time" id="preparation_time" pattern="^[0-9]{1,4}$" minlength="1" maxlength="4"
                     name="preparation_time" type="text" value="{{ recipe.preparation_time }}" class="validate" required>
                 <label for="preparation_time">Preparation Time (minutes)</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s3">
-                <input placeholder="Cooking Time in minutes" id="cooking_time" minlength="5" maxlength="50"
+                <input placeholder="Cooking Time in minutes" id="cooking_time" pattern="^[0-9]{1,4}$" minlength="1" maxlength="4"
                     name="cooking_time" type="text" value="{{ recipe.cooking_time }}" class="validate" required>
                 <label for="cooking_time">Cooking Time (minutes)</label>
             </div>
         </div>
-        <div class="row">
+         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" placeholder="Ingredients" name="ingredients"
+                    <textarea id="ingredients" placeholder="Ingredients" name="ingredients"
                         class="materialize-textarea validate" required>{{- recipe.ingredients -}}</textarea>
-                    <label for="textarea1">Ingredients - Please list these one step per line</label>
+                    <label for="textarea1">Ingredients - Please list these one per line</label>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" placeholder="Instructions" name="instructions"
+                    <textarea id="instructions" placeholder="Instructions" name="instructions"
                         class="materialize-textarea validate" required>{{- recipe.instructions -}}</textarea>
                     <label for="textarea1">Instructions - Please list these one step per line</label>
                 </div>

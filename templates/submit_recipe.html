@@ -32,21 +32,28 @@
         </div>
         <div class="row">
             <div class="input-field col s3">
-                <input placeholder="Preparation Time" id="preparation_time" minlength="5" maxlength="50"
+                <input placeholder="Serving Size" id="serving_size" pattern="^[0-9]{1,4}$" minlength="1" maxlength="3"
+                    name="serving_size" type="text" class="validate" required>
+                <label for="serving_size">Serving Size (1 to 4 people)</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s3">
+                <input placeholder="Preparation Time" id="preparation_time" pattern="^[0-9]{1,4}$" minlength="1" maxlength="3"
                     name="preparation_time" type="text" class="validate" required>
                 <label for="preparation_time">Preparation Time (minutes)</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s3">
-                <input placeholder="Cooking Time in minutes" id="cooking_time" minlength="5" maxlength="50"
+                <input placeholder="Cooking Time in minutes" id="cooking_time" pattern="^[0-9]{1,4}$" minlength="1" maxlength="3"
                     name="cooking_time" type="text" class="validate" required>
                 <label for="cooking_time">Cooking Time (minutes)</label>
             </div>
         </div>
         <div class="row">
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                     <textarea id="textarea1" placeholder="Ingredients" name="ingredients"
                         class="materialize-textarea validate" required></textarea>
                     <label for="textarea1">Ingredients - Please list these one item per line</label>
