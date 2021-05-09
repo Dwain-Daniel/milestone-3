@@ -7,6 +7,7 @@
      M.textareaAutoResize($('#textarea1'));
      $('select').formSelect();
      $('.parallax').parallax();
+     $('.modal').modal();
  });
 
  
