@@ -27,7 +27,7 @@
                     {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
                     <li><a href="{{ url_for('submit_recipe') }}">Submit Recipe</a></li>
-                    <li><a href="#">My Recipes</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -45,7 +45,7 @@
             {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
             <li><a href="{{ url_for('submit_recipe') }}">Submit Recipe</a></li>
-            <li><a href="#">My Recipes</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
             <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -53,10 +53,7 @@
             {% endif %}
         </ul>
     </header>
-    <!--Top Parallax-->
-    <div class="parallax-container">
-        <div class="parallax"><img id="hero" src="{{ url_for('static', filename='images/hero.jpg') }}"></div>
-    </div>
+   <div style="background-image; {{ url_for('static', filename='images/hero.jpg') }}"></div>
 
     <section>
         <!--flash messages-->
