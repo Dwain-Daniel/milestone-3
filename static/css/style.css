@@ -33,14 +33,10 @@ main {
 /* Footer */
 .page-footer {
     font-size: 20px;
-    padding-top: 0px;
-    margin-top: 0px;
 }
 
 /* Hero image*/
 .hero-image {
     width: 100%;
     height: 100vh;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
 }

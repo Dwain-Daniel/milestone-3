@@ -17,10 +17,6 @@
 
 <body>
 
-    <div class="parallax-container">
-        <div class="parallax"><img src="{{ url_for('static', filename='images/hero.jpg') }}"></div>
-    </div>
-
     <header>
         <!--Top of the screen Navbar-->
         <nav class="nav-extended text-shadow amber darken-1">
@@ -78,7 +74,8 @@
         {% block content %}
         {% endblock %}
     </main>
-
+    
+<!--Hero image-->
     <div>
         <img class="hero-image col s12 m4" src="{{ url_for('static', filename='images/hero.jpg') }}" alt="">
     </div>
