@@ -116,7 +116,7 @@ def submit_recipe():
 
         categories = mongo.db.categories.find()
         return render_template("submit_recipe.html", categories=categories)
-    flash("You are not logged in so can not add recipe, please log in")
+    flash("You are not logged in so cannot add recipe, please log in")
     return redirect(url_for("login"))
 
 
@@ -163,4 +163,4 @@ def contact():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
