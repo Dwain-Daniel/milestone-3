@@ -8,7 +8,7 @@
      $('select').formSelect();
      $('.parallax').parallax();
      $('.modal').modal();
- });
+    });
 
  
 

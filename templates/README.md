@@ -44,7 +44,7 @@ I have incorporated icons from Font Awesome, thes have a functional purpose of h
 <li>To submit and edit recipe form, the category has to be chosen</li>
 <li>The servings, preparation time, cook time and total time has to be numbered.</li>
 <li>A recipe or category can't be deleted by just one click.</li>
-If someone clicks on the delete button, there wil be a modal with a confirmation if someone is sure to delete the recipe or category.</li>
+<li>If someone clicks on the delete button, there wil be a modal with a confirmation if someone is sure to delete the recipe or category.</li>
 
 <h4>Wireframe</h4>
 
