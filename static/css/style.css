@@ -33,16 +33,14 @@ main {
 /* Footer */
 .page-footer {
     font-size: 20px;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
-/* Parallax image*/
-.parallax {
-    height: 100%;
-    min-height: 500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+/* Hero image*/
+.hero-image {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
-
- 
