@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
     <header>
         <!--Top of the screen Navbar-->
         <nav class="nav-extended text-shadow amber darken-1">
@@ -28,7 +27,6 @@
                     {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
                     <li><a href="{{ url_for('submit_recipe') }}">Submit Recipe</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                     <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
@@ -74,7 +72,7 @@
         {% block content %}
         {% endblock %}
     </main>
-    
+
 <!--Hero image-->
     <div>
         <img class="hero-image col s12 m4" src="{{ url_for('static', filename='images/hero.jpg') }}" alt="">
