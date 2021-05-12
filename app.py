@@ -97,7 +97,7 @@ def logout():
 
 @app.route("/submit_recipe", methods=["GET", "POST"])
 def submit_recipe():
-    if session["user"]:
+    if session.get("user"):
         if request.method == "POST":
             recipe = {
                 "category": request.form.get("category"),
@@ -122,7 +122,7 @@ def submit_recipe():
 
 @app.route("/edit_recipe<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    if session["user"]:
+    if session.get("user"):
         if request.method == "POST":
             submit = {
                 "category": request.form.get("category"),
@@ -147,7 +147,7 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    if session["user"]:
+    if session.get("user"):
         mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         flash("Recipe Deleted")
         return redirect(url_for("get_recipes"))
