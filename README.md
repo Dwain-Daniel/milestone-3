@@ -131,10 +131,15 @@ I have tested my site thoroughly, all the links are working and take the user to
 The webpage will respond when used on smaller devices, the nav bar will shrink down into a drop down menu. 
 
 <li>I placed my site throught a CSS Validator which returned no errors</li>
-<li>I have placed all pages through a HTML Validator which returned one warning</li>  
+<li>I have placed all pages through a HTML Validator which returned one warning</li>
+<img src="static/testing/html.PNG">
 <li>I have tested my webpage using [Google Mobile Testing](https://search.google.com/test/mobile-friendly) This returned no errors</li>
+<img src="static/testing/mobile-testing.PNG">
 <li>I have tested the Javascript on my webpage, this returned two warnings, no errors.</li>
+<img src="static/testing/jsHint.PNG">
 <li>I have placed all pages through a Python Validator. It returned a Pass mark.
+<li>I have also tested my page using Chrome Dev Lighthouse
+<img src="static/testing/lighthouse.PNG">
 
 <h3>Test User Stories</h3>
 
