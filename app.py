@@ -116,7 +116,7 @@ def submit_recipe():
 
         categories = mongo.db.categories.find()
         return render_template("submit_recipe.html", categories=categories)
-    flash("You are not logged in so cannot add recipe, please log in")
+    flash("You are not logged in so cannot add recipe, please log in.")
     return redirect(url_for("login"))
 
 
@@ -141,7 +141,7 @@ def edit_recipe(recipe_id):
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         categories = mongo.db.categories.find()
         return render_template("edit_recipe.html", recipe=recipe, categories=categories)
-    flash("You are not logged in so you cannot edit this recipe")
+    flash("You are not logged in so cannot add recipe, please log in.")
     return redirect(url_for("login"))
     
 
@@ -151,7 +151,7 @@ def delete_recipe(recipe_id):
         mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         flash("Recipe Deleted")
         return redirect(url_for("get_recipes"))
-    flash("You are not logged in so cannot delete recipes")
+    flash("You are not logged in so cannot delete recipes, please log in.")
     return redirect(url_for("login"))
 
 
