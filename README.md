@@ -34,8 +34,7 @@ Returning users
 <h4>Colour Scheme</h4>
 
 I have used an amber and white theme. I have used this as it is bright and attractive. The theme is consistent throughout the site which is good for the UI/UX. The header and footers 
-are both amber with white text and icons.The background is white, with black text.  
-fit the colour theme.
+are both amber with white text and icons.The background is white, with black text. 
 
 <h4>Icons </h4>
 
@@ -66,6 +65,8 @@ The final version whilst similar doesnt match exactly. My wireframes can be foun
 <li>Once the user is signed in they have full functionality of the site. Non registered users can only see the Log In, Contact Us, Home and Register tabs.</li>
 <li>The user can click on the social media links and be taken directly to the wedbiste on a new tab</li>
 <li>The submit and edit recipe pages have fully functioning forms with defensive programming</li>
+<li>Users can only edit or delete their own recipes, other users will not have the option to do this on recipes not belonging to them</li>
+
 
 <h3>Features left to implement</h3>
 
@@ -111,8 +112,6 @@ I used Werkzeugfor password hashing and authentication
 [<h4>Flask</h4>](https://pypi.org/project/Flask/)
 I have used Flask for the web application framework
 
-[<h4>MongoDB</h4>](https://www.mongodb.com/)
-
 [<h4>Heroku</h4>](https://www.heroku.com/)
 I have used Heroku to deploy my app 
 
@@ -125,14 +124,6 @@ Git is used as version control software to commit and push code to the GitHub re
 [<h4>Techsini</h4>](http://techsini.com/multi-mockup/index.php)
 I have used this to create a mock up of the site on different devices
 
-
-<h3>Features left to implement</h3>
-
-I would like to add a number of features going forward such as: <br>
-<li>Link the Collaboration form to an external mailbox</li>
-<li>Add a download Resume button/link</li>
-<li>An online store selling packages for development ideas/pricing plans</li>
-
  
 <h3>Testing</h3> 
 
@@ -143,7 +134,7 @@ The webpage will respond when used on smaller devices, the nav bar will shrink d
 <li>I have placed all pages through a HTML Validator which returned one warning</li>  
 <li>I have tested my webpage using [Google Mobile Testing](https://search.google.com/test/mobile-friendly) This returned no errors</li>
 <li>I have tested the Javascript on my webpage, this returned two warnings, no errors.</li>
-
+<li>I have placed all pages through a Python Validator. It returned a Pass mark.
 
 <h3>Test User Stories</h3>
 
@@ -166,21 +157,23 @@ The search function works very well, if I want a recipe containing chicken for e
 All other recipes will be listed on the home page.
  
 
-<h3>Deployment</h3>
-I used Heroku for the deployment of my app. To set up the local workspace for Heroku in the terminal window of GitPod I typed: pip3 freeze -- local > requirements.txt followed by python app.py > Procfile 
+<h4>Deployment</h4>
+
+<li>I used Heroku for the deployment of my app.</li> 
+<li>To set up the local workspace for Heroku in the terminal window of GitPod I typed: pip3 freeze -- local > requirements.txt followed by python app.py > Procfile 
 I then needed to create a Heroku account and create a new app and select my region.
-The deployment method was 'Github'
-Click on the Connect to GitHub section in the deploy tab in Heroku.
-Search your repository to connect with it.
-When your repository appears click on connect to connect your repository with the Heroku.
-Go to the settings app in Heroku and go to Config Vars. Click on Reveal Config Vars.
-Enter the variables contained in your env.py file. These should be: IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME
-Push the requirements.txt and Procfile to repository.
-$ git add requirements.txt
-$ git commit -m "Add requirements.txt"
-$ git add Procfile
-$ git commit -m "Add Procfile"
-Automatic deployment: Go to the deploy tab in Heroku and find Automatic deployments. Click on Enable Automatic Deploys. By Manual deploy click on Deploy Branch.
+<li>The deployment method was 'Github'
+<li>Click on the Connect to GitHub section in the deploy tab in Heroku.
+<li>Search for your repository to connect with it.
+<li>When your repository appears click on connect to connect your repository with the Heroku.
+<li>Go to the settings app in Heroku and go to Config Vars. Click on Reveal Config Vars.
+<li>Enter the variables contained in your env.py file. These should be: IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME
+<li>Push the requirements.txt and Procfile to repository.
+<li>git add . requirements.txt
+<li>git commit -m "Add requirements.txt"
+<li>git add Procfile
+<li> git commit -m "Add Procfile"
+<li>Automatic deployment: Go to the deploy tab in Heroku and find Automatic deployments. Click on Enable Automatic Deploys. By Manual deploy click on Deploy Branch.
 Heroku will receive my code from Github and host the app using the required packages. Click on Open app in the right corner of your Heroku account. The app wil open and the live link is available from the address bar.
 
 
