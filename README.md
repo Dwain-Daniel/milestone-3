@@ -1,6 +1,6 @@
  <h1>Milestone Project</h1>
 
-<img src="static/images/techsini.PNG">
+<img src="static/testing/techsini.PNG">
 My site can be viewed at https://python-milestone.herokuapp.com/ 
 
 
@@ -65,6 +65,7 @@ The final version whilst similar doesnt match exactly. My wireframes can be foun
 <li>Once the user is signed in they have full functionality of the site. Non registered users can only see the Log In, Contact Us, Home and Register tabs.</li>
 <li>The user can click on the social media links and be taken directly to the wedbiste on a new tab</li>
 <li>The submit and edit recipe pages have fully functioning forms with defensive programming</li>
+<li>Should the user click on delete recipe a modal will appear asking them to confirm that they want to delete this</li>
 <li>Users can only edit or delete their own recipes, other users will not have the option to do this on recipes not belonging to them</li>
 
 
